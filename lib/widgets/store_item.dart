@@ -31,14 +31,14 @@ class StoreItem extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  Text(
+                  const Text(
                     'Turkiya',
                     style: TextStyle(
                       color: Colors.white,
@@ -47,7 +47,7 @@ class StoreItem extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  Text(
+                  const Text(
                     '28 ta',
                     style: TextStyle(
                       color: Colors.white,
@@ -56,7 +56,7 @@ class StoreItem extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  Row(
+                  const Row(
                     children: [
                       Text(
                         '29\$',
@@ -81,7 +81,7 @@ class StoreItem extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Text(
+                  const Text(
                     '17-03-2023',
                     style: TextStyle(
                       color: Colors.white,

@@ -2,7 +2,6 @@
 //
 //     final BaseResponse = BaseResponseFromJson(jsonString);
 
-import 'dart:convert';
 
  
 class BaseResponse {

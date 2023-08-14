@@ -21,7 +21,7 @@ class _AddStorePageState extends State<AddStorePage> {
     return Scaffold(
       backgroundColor: AppColor.mainColor,
       appBar: AppBar(
-        title: Text("Tovar qoshish"),
+        title: const Text("Tovar qoshish"),
         backgroundColor: AppColor.bottomBarColor,
       ),
       body: SingleChildScrollView(

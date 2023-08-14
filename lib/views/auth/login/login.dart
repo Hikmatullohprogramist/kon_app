@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kon_app/utils/colors.dart';
 import 'package:kon_app/viewModel/authViewModel.dart';
-import 'package:kon_app/views/auth/registration/registration.dart';
 import 'package:kon_app/widgets/custom_button.dart';
 import 'package:kon_app/widgets/custom_input.dart';
 import 'package:provider/provider.dart';
@@ -50,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
+                            const Text(
                               "LOGO",
                               style:
                                   TextStyle(color: Colors.white, fontSize: 44),

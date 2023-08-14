@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kon_app/utils/colors.dart';
 import 'package:kon_app/views/auth/login/login.dart';
-import 'package:kon_app/views/auth/registration/registration.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -14,15 +13,15 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 3)).then(
-      (value) => Get.offAll(LoginScreen()),
+    Future.delayed(const Duration(seconds: 3)).then(
+      (value) => Get.offAll(const LoginScreen()),
     );
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: AppColor.mainColor,
       body: Center(
         child: Text(

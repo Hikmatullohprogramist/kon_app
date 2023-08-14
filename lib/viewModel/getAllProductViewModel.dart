@@ -1,4 +1,6 @@
-import 'package:flutter/foundation.dart';
+// ignore_for_file: file_names
+
+import 'package:flutter/foundation.dart' show ChangeNotifier, kDebugMode;
 import 'package:kon_app/data/service/service.dart';
 
 class GetAllProductViewModel extends ChangeNotifier {
@@ -13,7 +15,9 @@ class GetAllProductViewModel extends ChangeNotifier {
   getAllProduct() async {
     progress = true;
     products = await apiService.fetchAllProducts();
-    print("===================================================================$products");
+    if (kDebugMode) {
+      print("===================================================================$products");
+    }
     progress = false;
   }
 }

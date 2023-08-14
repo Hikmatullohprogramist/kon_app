@@ -1,7 +1,8 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, library_prefixes
 
 import 'package:dio/dio.dart' as DIO;
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:kon_app/data/model/login_response.dart';
 import 'package:get/get.dart';
 import 'package:kon_app/data/model/store_model.dart';
@@ -57,18 +58,24 @@ class ApiService {
       });
 
       final response = await dio.post("auth/token", data: data);
-      print(response.data);
+      if (kDebugMode) {
+        print(response.data);
+      }
       if (response.statusCode == 200) {
         return LoginResponse.fromJson(response.data);
       } else {
         Get.snackbar("ERROR", response.statusMessage.toString());
-        print(
+        if (kDebugMode) {
+          print(
             "BIZDAA ERROR ==========================================${response.statusMessage}");
+        }
       }
     } catch (e) {
       Get.snackbar("ERROR", e.toString());
-      print(
+      if (kDebugMode) {
+        print(
           "BIZDAA ERROR ==========================================${e.toString()}");
+      }
     }
     return null;
   }
