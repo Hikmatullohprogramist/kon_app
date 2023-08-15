@@ -14,10 +14,13 @@ class GetAllProductViewModel extends ChangeNotifier {
 
   getAllProduct() async {
     progress = true;
+    notifyListeners();
     products = await apiService.fetchAllProducts();
     if (kDebugMode) {
       print("===================================================================$products");
     }
     progress = false;
+    notifyListeners();
+
   }
 }

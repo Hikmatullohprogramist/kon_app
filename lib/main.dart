@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+import 'package:kon_app/viewModel/addProductInStoreViewModel.dart';
 import 'package:kon_app/viewModel/getAllProductViewModel.dart';
 import 'package:provider/provider.dart';
 import 'package:path_provider/path_provider.dart';
@@ -28,6 +29,8 @@ void main() async {
         ),
         ChangeNotifierProvider(
           create: (context) => GetAllProductViewModel(),
+        ),  ChangeNotifierProvider(
+          create: (context) => AddStoreItem(),
         ),
       ],
       child: const MyApp(),

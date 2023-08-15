@@ -27,7 +27,8 @@ class StorePage extends StatelessWidget {
         appBar: AppBar(
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                },
               icon: const Icon(
                 Icons.qr_code,
               ),

@@ -1,5 +1,7 @@
 // ignore_for_file: non_constant_identifier_names, library_prefixes
 
+import 'dart:convert';
+
 import 'package:dio/dio.dart' as DIO;
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
@@ -21,15 +23,6 @@ class ApiService {
         'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ3d3ciLCJleHAiOjIyMDc5OTU2ODB9.GW27gafBab-LOHtZrqVnGi3ejV-CIoZrxOKJiBAkSTM'
   };
 
-  //Ombor
-  // Future<List<StoreModel>> getStoreItems() async {
-  //   return [];
-  // }
-//zapchast
-//savdo
-//haridorlar
-//kassa
-//  user auth
   Future<List<StoreModel>> fetchAllProducts() async {
     try {
       final response = await dio.request(
@@ -50,6 +43,41 @@ class ApiService {
     }
   }
 
+  Future<Map<String, dynamic>> addStore(
+      String name,
+      String birlik,
+      String size,
+      int number,
+      int zapchast_id,
+      ) async {
+    try {
+      var data = json.encode({
+        "name": name,
+        "birlik": birlik,
+        "size": size,
+        "number": number,
+        "zapchast_id": zapchast_id
+      });
+      var response = await dio.post("storage/add",
+          data: data,
+          options: Options(
+            headers: headers,
+          ));
+
+      if (response.statusCode == 200) {
+        Map<String, dynamic> responseData = response.data; // Assuming the response is a JSON object
+        Get.snackbar("SUCCESS", "Store added successfully");
+        return responseData;
+      }
+    } on DioException catch (e) {
+      Get.snackbar("ERROR", e.toString());
+      // You might want to throw the exception here to handle it higher up in the calling code.
+      throw e;
+    }
+    return {}; // Return an empty map or null here, depending on your use case.
+  }
+
+
   Future<LoginResponse?> login(String username, String password) async {
     try {
       var data = DIO.FormData.fromMap({
@@ -67,31 +95,16 @@ class ApiService {
         Get.snackbar("ERROR", response.statusMessage.toString());
         if (kDebugMode) {
           print(
-            "BIZDAA ERROR ==========================================${response.statusMessage}");
+              "BIZDAA ERROR ==========================================${response.statusMessage}");
         }
       }
     } catch (e) {
       Get.snackbar("ERROR", e.toString());
       if (kDebugMode) {
         print(
-          "BIZDAA ERROR ==========================================${e.toString()}");
+            "BIZDAA ERROR ==========================================${e.toString()}");
       }
     }
     return null;
   }
-
-  // Future<List<StoreModel>> getAllProducts() async {
-  //   try {} catch (e) {
-  //     print(e);
-  //   }
-  //
-  //   return [];
-  // }
-
-//user
-//phone
-//orders
-//storage
-//file section
-//type section
 }
