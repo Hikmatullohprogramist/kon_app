@@ -74,6 +74,14 @@ class _StorePageState extends State<StorePage> {
       ),
       backgroundColor: AppColor.mainColor,
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios,
+          ),
+        ),
         actions: [
           IconButton(
             onPressed: () {},
@@ -108,36 +116,6 @@ class _StorePageState extends State<StorePage> {
           const SizedBox(
             height: 20,
           ),
-          // ToggleSwitch(
-          //   minWidth: 80.0,
-          //   minHeight: 40.0,
-          //   initialLabelIndex: 0,
-          //   cornerRadius: 20.0,
-          //   activeFgColor: Colors.white,
-          //   inactiveBgColor: AppColor.mainColor,
-          //   inactiveFgColor: Colors.white,
-          //   totalSwitches: 2,
-          //   changeOnTap: true,
-          //   icons: const [
-          //     Icons.store,
-          //     Icons.raw_on,
-          //   ],
-          //   iconSize: 30.0,
-          //   borderWidth: 0.5,
-          //   borderColor: const [AppColor.whiteColor],
-          //   activeBgColors: const [
-          //     [AppColor.bottomBarColor],
-          //     [AppColor.bottomBarColor],
-          //   ],
-          //   onToggle: (index) {
-          //     currentIndex = index!;
-          //
-          //     if (kDebugMode) {
-          //       print(currentIndex);
-          //     }
-          //     setState(() {});
-          //   },
-          // ),
           Container(
             width: 160.0,
             height: 40.0,
@@ -152,7 +130,9 @@ class _StorePageState extends State<StorePage> {
                   onTap: () {
                     setState(() {
                       currentIndex--;
-                      print(currentIndex);
+                      if (kDebugMode) {
+                        print(currentIndex);
+                      }
                     });
                   },
                   child: Container(
@@ -162,7 +142,7 @@ class _StorePageState extends State<StorePage> {
                       color: currentIndex == 0
                           ? AppColor.bottomBarColor
                           : AppColor.mainColor,
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(20),
                         bottomLeft: Radius.circular(20),
                       ),
@@ -190,7 +170,7 @@ class _StorePageState extends State<StorePage> {
                       color: currentIndex == 1
                           ? AppColor.bottomBarColor
                           : AppColor.mainColor,
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         topRight: Radius.circular(20),
                         bottomRight: Radius.circular(20),
                       ),
@@ -229,6 +209,9 @@ class _StorePageState extends State<StorePage> {
                           itemBuilder: (context, index) {
                             return StoreItem(
                               name: value.products[index].name,
+                              birlik: value.products[index].birlik,
+                              size: value.products[index].size,
+                              number: value.products[index].number,
                             );
                           },
                         );
@@ -263,6 +246,12 @@ class _StorePageState extends State<StorePage> {
                           itemBuilder: (context, index) {
                             return StoreItem(
                               name: value.productZapchast[index].name,
+                              birlik: value.productZapchast[index].birlik
+                                  .toString(),
+                              size: value.productZapchast[index].typeId
+                                  .toString(),
+                              number:
+                                  value.productZapchast[index].size.toString(),
                             );
                           },
                         );

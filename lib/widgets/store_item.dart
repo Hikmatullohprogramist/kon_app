@@ -3,8 +3,17 @@ import 'package:kon_app/widgets/custom_container.dart';
 
 class StoreItem extends StatelessWidget {
   final String name;
+  final String birlik;
+  final String size;
+  final String number;
 
-  const StoreItem({super.key, required this.name});
+  const StoreItem({
+    super.key,
+    required this.name,
+    required this.birlik,
+    required this.size,
+    required this.number,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +34,7 @@ class StoreItem extends StatelessWidget {
               const SizedBox(
                 width: 20,
               ),
-               Column(
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -38,39 +47,39 @@ class StoreItem extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  const Text(
-                    'Turkiya',
-                    style: TextStyle(
+                  Text(
+                    birlik,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 14,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  const Text(
-                    '28 ta',
-                    style: TextStyle(
+                  Text(
+                    size,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 14,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  const Row(
+                  Row(
                     children: [
                       Text(
-                        '29\$',
-                        style: TextStyle(
+                        number,
+                        style: const TextStyle(
                           color: Color(0xFFFA5353),
                           fontSize: 16,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 8,
                       ),
-                      Text(
+                      const Text(
                         '36\$',
                         style: TextStyle(
                           color: Color(0xFF269400),

@@ -70,7 +70,7 @@ class ApiService {
     } on DioException catch (e) {
       Get.snackbar("ERROR", e.toString());
       // You might want to throw the exception here to handle it higher up in the calling code.
-      throw e;
+      rethrow;
     }
     return {}; // Return an empty map or null here, depending on your use case.
   }

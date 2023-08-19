@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
       ),
       backgroundColor: AppColor.mainColor,
-      drawer: Drawer(),
+      drawer: const Drawer(),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: SingleChildScrollView(

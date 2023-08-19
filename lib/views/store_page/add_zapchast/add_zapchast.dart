@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kon_app/utils/colors.dart';
@@ -15,12 +17,6 @@ class AddStoreZapchastPage extends StatefulWidget {
 }
 
 class _AddStoreZapchastPageState extends State<AddStoreZapchastPage> {
-  // "name": "string",
-  // "birlik": "string",
-  // "type_id": 0,
-  // "size": "string",
-  // "number": 0
-
   TextEditingController nameCtrl = TextEditingController();
   TextEditingController birlikCtrl = TextEditingController();
   TextEditingController type_idCtrl = TextEditingController();
@@ -32,7 +28,7 @@ class _AddStoreZapchastPageState extends State<AddStoreZapchastPage> {
     return Scaffold(
       backgroundColor: AppColor.mainColor,
       appBar: AppBar(
-        title: const Text("Zapchast qoshish"),
+        title: const Text("Zapchast qo'shish"),
         backgroundColor: AppColor.bottomBarColor,
       ),
       body: SingleChildScrollView(
@@ -97,21 +93,22 @@ class _AddStoreZapchastPageState extends State<AddStoreZapchastPage> {
                     }),
                 Consumer<GetAllZapchastViewModel>(
                   builder: (context, value, child) => CustomButton(
-                      text: "Saqlash",
-                      onclick: () {
-                        value.addZapchast(
-                          nameCtrl.text.trim(),
-                          birlikCtrl.text,
-                          int.parse(type_idCtrl.text),
-                          sizeCtrl.text,
-                          int.parse(numberCtrl.text),
-                        );
-                        nameCtrl.clear();
-                        birlikCtrl.clear();
-                        sizeCtrl.clear();
-                        numberCtrl.clear();
-                        type_idCtrl.clear();
-                      }),
+                    text: "Saqlash",
+                    onclick: () {
+                      value.addZapchast(
+                        nameCtrl.text.trim(),
+                        birlikCtrl.text,
+                        int.parse(type_idCtrl.text),
+                        sizeCtrl.text,
+                        int.parse(numberCtrl.text),
+                      );
+                      nameCtrl.clear();
+                      birlikCtrl.clear();
+                      sizeCtrl.clear();
+                      numberCtrl.clear();
+                      type_idCtrl.clear();
+                    },
+                  ),
                 ),
               ],
             ),
