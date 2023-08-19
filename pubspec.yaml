@@ -37,7 +37,9 @@ dependencies:
   provider: ^6.0.5
   hive:
   path_provider:
- 
+  simple_speed_dial: ^0.1.7
+  toggle_switch: ^2.1.0
+
 
 dev_dependencies:
   flutter_lints: ^2.0.0

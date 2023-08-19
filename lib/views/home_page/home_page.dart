@@ -23,15 +23,9 @@ class _HomePageState extends State<HomePage> {
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.menu,
-            color: Colors.white,
-          ),
-        ),
       ),
       backgroundColor: AppColor.mainColor,
+      drawer: Drawer(),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: SingleChildScrollView(

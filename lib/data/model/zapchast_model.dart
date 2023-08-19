@@ -1,19 +1,22 @@
-class StoreModel {
+class ZapchastModel {
   String name;
   String birlik;
+  int typeId;
   String size;
   double number;
 
-  StoreModel({
+  ZapchastModel({
     required this.name,
     required this.birlik,
+    required this.typeId,
     required this.size,
     required this.number,
   });
 
-  factory StoreModel.fromJson(Map<String, dynamic> json) => StoreModel(
+  factory ZapchastModel.fromJson(Map<String, dynamic> json) => ZapchastModel(
         name: json["name"],
         birlik: json["birlik"],
+        typeId: json["type_id"],
         size: json["size"],
         number: json["number"],
       );
@@ -21,6 +24,7 @@ class StoreModel {
   Map<String, dynamic> toJson() => {
         "name": name,
         "birlik": birlik,
+        "type_id": typeId,
         "size": size,
         "number": number,
       };

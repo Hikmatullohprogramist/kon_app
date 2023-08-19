@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kon_app/utils/colors.dart';
-import 'package:kon_app/views/auth/login/login.dart';
+import 'package:kon_app/views/home_page/home_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -14,7 +14,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3)).then(
-      (value) => Get.offAll(const LoginScreen()),
+      (value) => Get.offAll(const HomePage()),
     );
     super.initState();
   }

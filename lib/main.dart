@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:kon_app/viewModel/addProductInStoreViewModel.dart';
 import 'package:kon_app/viewModel/getAllProductViewModel.dart';
+import 'package:kon_app/viewModel/getAllZapchast.dart';
 import 'package:provider/provider.dart';
 import 'package:path_provider/path_provider.dart';
 import 'viewModel/authViewModel.dart';
@@ -29,8 +30,12 @@ void main() async {
         ),
         ChangeNotifierProvider(
           create: (context) => GetAllProductViewModel(),
-        ),  ChangeNotifierProvider(
+        ),
+        ChangeNotifierProvider(
           create: (context) => AddStoreItem(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => GetAllZapchastViewModel(),
         ),
       ],
       child: const MyApp(),
